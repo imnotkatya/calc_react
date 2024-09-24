@@ -77,15 +77,16 @@ function App() {
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
       < div className="window">
-        <p className="output"></p>
-        {state.result !== "" ? (
-          <p className="result">{state.result}</p>
-        ) : (
-          <p className="previous">{state.prev}</p>
-        )}
+        <p className="output">
+          {state.result !== "" ? (
+            <p className="result">{state.result}</p>
+          ) : (
+            <p className="previous">{state.prev}</p>
+          )}
 
-        <p className="op">{state.op}</p>
-        <p className="current">{state.input}</p>
+          <p className="op">{state.op}</p>
+          <p className="current">{state.input}</p>
+        </p>
       </div>
       <div className="Buttons">
 

@@ -1,6 +1,8 @@
 
 import { useState, useReducer } from "react";
 import React from 'react';
+import './calc_css.css';
+
 const initialState = {
   prev: "",
   op: "",
@@ -71,16 +73,22 @@ function App() {
 
   return (
     <div className="calculator">
-      <p className="output"></p>
-      {state.result !== "" ? (
-        <p className="result">{state.result}</p>
-      ) : (
-        <p className="previous">{state.prev}</p>
-      )}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+      < div className="window">
+        <p className="output"></p>
+        {state.result !== "" ? (
+          <p className="result">{state.result}</p>
+        ) : (
+          <p className="previous">{state.prev}</p>
+        )}
 
-      <p className="op">{state.op}</p>
-      <p className="current">{state.input}</p>
-      <div className="Button">
+        <p className="op">{state.op}</p>
+        <p className="current">{state.input}</p>
+      </div>
+      <div className="Buttons">
+
         <button onClick={() => handleInput(1)}>1</button>
         <button onClick={() => handleInput(2)}>2</button>
         <button onClick={() => handleInput(3)}>3</button>
@@ -91,17 +99,17 @@ function App() {
         <button onClick={() => handleInput(8)}>8</button>
         <button onClick={() => handleInput(9)}>9</button>
         <button onClick={() => handleInput(0)}>0</button>
-      </div>
-      <div className="Operation">
+
         <button onClick={() => handleOperation("+")}>+</button>
         <button onClick={() => handleOperation("-")}>-</button>
         <button onClick={() => handleOperation("*")}>*</button>
         <button onClick={() => handleOperation("/")}>/</button>
         <button onClick={() => handleResult()}>=</button>
-        <button onClick={() => handleClear()}>clear</button>
+        <button id="clear" onClick={() => handleClear()}>clear</button>
       </div>
 
     </div>
+
   );
 }
 

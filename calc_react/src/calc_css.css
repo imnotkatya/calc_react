@@ -18,6 +18,10 @@
     padding: 20px;
 }
 
+.output {
+    display: flex;
+}
+
 .window {
 
     display: flex;
